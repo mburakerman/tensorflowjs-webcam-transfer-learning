@@ -5,8 +5,9 @@ This example shows you how to predict poses from a webcam using transfer learnin
 
 
 ### 🔮 Usage
-After enabling your webcam, set your position and than click the button a few time until probability rate is 100%.
+After enabling your webcam, set your position and then click the button a few time until probability rate is 100%.
 Make this for left, middle and right.
+You can use your arrow keys to move the car.
 
 That's is. Have fun!
 
