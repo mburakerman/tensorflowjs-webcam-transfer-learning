@@ -1,8 +1,61 @@
+:root{
+    --purple: #654ea3;
+    --pink: #eaafc8;
+    --black :#444;
+    --transition: all .15s ease;
+}
+
 body {
-    margin: 0;
+    background:#fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--black);
+    font-size:16px;
+}
+* {
+    outline:none;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--purple);
+    background: -webkit-linear-gradient(to right, var(--pink), var(--purple));  
+    background: linear-gradient(to right, var(--pink),var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+button {
+    cursor:pointer;
+    border:none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color : var(--pink);
+    color:var(--purple);
+    transition : var(--transition);
+    font-size:16px;
+}
+button:hover {
+    color:#fff;
+}
+#app {
     display: flex;
+    justify-content: center;
 }
-#tfjs-controller {
-    position: static;
+@media only screen and (max-width: 1200px) {
+    #app {
+        flex-wrap: wrap;
+    }
 }
-#app {display: flex;}
+.train-buttons {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width:310px;
+}
+
+
+#tfjsController{
+    margin-right:20px;
+}
