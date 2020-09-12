@@ -8,7 +8,6 @@ async function loadModel() {
   modelInfo.style.display = "none";
 }
 
-
 // bind training
 async function bindTraining() {
   // reads an image from the webcam and associates it with a specific class index.
