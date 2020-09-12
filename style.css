@@ -11,6 +11,7 @@ body {
     font-family: 'Varela Round', sans-serif;
     color: var(--black);
     font-size:16px;
+    padding:5px;
 }
 * {
     outline:none;

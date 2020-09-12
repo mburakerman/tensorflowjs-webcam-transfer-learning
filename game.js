@@ -1,4 +1,4 @@
-// game pulled from: https://codepen.io/johan-tirholm/pen/PGYExJ
+// https://codepen.io/johan-tirholm/pen/PGYExJ
 var $ = {
     canvas: null,
     ctx: null,
