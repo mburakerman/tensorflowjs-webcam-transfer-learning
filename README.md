@@ -3,4 +3,9 @@ This example shows you how to predict poses from a webcam using transfer learnin
 
 > In this example, we'll use a pretrained MobileNet model and train another model using an internal mobilenet activation to predict 4 different classes from the webcam defined by the user.
 
-🚀 This tfjs-examples repo helped me a lot! : https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning
+### 🎮 📓 Preview
+<img src="https://raw.githubusercontent.com/mburakerman/tensorflowjs-webcam-transfer-learning/master/preview.gif?token=AEGNZBSUZ2LJHMLXKHN6NCK7LTER4">
+
+### ✨ Thanks 
+🚀 https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning
+🚀 https://codepen.io/johan-tirholm/pen/PGYExJ
