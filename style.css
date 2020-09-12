@@ -12,6 +12,7 @@ body {
     color: var(--black);
     font-size:16px;
     padding:5px;
+    line-height: 1.4;
 }
 * {
     outline:none;
@@ -55,8 +56,12 @@ button:hover {
     margin: 0 auto;
     width:310px;
 }
-
-
 #tfjsController{
     margin-right:20px;
+}
+
+.info {
+    max-width:450px;
+    margin: 50px auto 20px;
+    text-align: center;
 }
