@@ -3,6 +3,13 @@ This example shows you how to predict poses from a webcam using transfer learnin
 
 > In this example, we'll use a pretrained MobileNet model and train another model using an internal mobilenet activation to predict 3 different classes from the webcam defined by the user.
 
+### 💡 Usage
+After enabling your webcam, you can train left, middle and right positions with your webcam.
+
+Set your position and tahn click the button a few time until probability rate is 100%.(make this for left, middle and right)
+
+That's is. Have fun!
+
 ### 🎮 📓 Preview
 <img src="https://raw.githubusercontent.com/mburakerman/tensorflowjs-webcam-transfer-learning/master/preview.gif?token=AEGNZBSUZ2LJHMLXKHN6NCK7LTER4">
 
