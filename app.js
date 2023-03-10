@@ -20,10 +20,15 @@ async function bindTraining() {
   }
 
   // add example
-  document.getElementById("left").addEventListener("click", () => addExample(0));
-  document.getElementById("middle").addEventListener("click", () => addExample(1));
-  document.getElementById("right").addEventListener("click", () => addExample(2));
-
+  document
+    .getElementById("left")
+    .addEventListener("click", () => addExample(0));
+  document
+    .getElementById("middle")
+    .addEventListener("click", () => addExample(1));
+  document
+    .getElementById("right")
+    .addEventListener("click", () => addExample(2));
 
   while (true) {
     if (classifier.getNumClasses() > 0) {
@@ -33,7 +38,7 @@ async function bindTraining() {
       const result = await classifier.predictClass(activation);
 
       const classes = ["L", "M", "R"];
-      document.getElementById('console').innerText = `
+      document.getElementById("console").innerText = `
         prediction: ${classes[result.classIndex]}\n
         probability: ${result.confidences[result.classIndex] * 100}%
       `;
@@ -61,10 +66,10 @@ async function loadWebcam() {
       .getUserMedia({
         audio: false,
         video: {
-          facingMode: "user"
-        }
+          facingMode: "user",
+        },
       })
-      .then(stream => {
+      .then((stream) => {
         window.stream = stream;
         webcamElement.srcObject = stream;
         return new Promise((resolve, reject) => {
@@ -80,17 +85,17 @@ async function loadWebcam() {
 // init
 function init() {
   loadModel()
-    .then(_ => {
+    .then((_) => {
       loadWebcam();
     })
-    .then(_ => {
+    .then((_) => {
       bindTraining();
     })
-    .then(_ => {
+    .then((_) => {
       drawBg();
       draw();
-    })
+    });
 }
 window.onload = function () {
   init();
-}
+};
