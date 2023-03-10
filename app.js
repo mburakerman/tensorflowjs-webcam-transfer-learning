@@ -8,15 +8,17 @@ const predictionInfo = document.getElementById("predictionInfo");
 
 const CLASSES = ["L", "M", "R"];
 
+const getClassIndex = (classItem) => {
+  return CLASSES.indexOf(classItem);
+};
+
 let net;
 
-// load model
 async function loadModel() {
   net = await mobilenet.load();
   modelInfo.style.display = "none";
 }
 
-// bind training
 async function bindTraining() {
   // reads an image from the webcam and associates it with a specific class index.
   function addExample(elementId) {
@@ -28,9 +30,15 @@ async function bindTraining() {
   }
 
   // add example
-  trainLeftButton.addEventListener("click", () => addExample(0));
-  trainMiddleButton.addEventListener("click", () => addExample(1));
-  trainRightButton.addEventListener("click", () => addExample(2));
+  trainLeftButton.addEventListener("click", () =>
+    addExample(getClassIndex("L"))
+  );
+  trainMiddleButton.addEventListener("click", () =>
+    addExample(getClassIndex("M"))
+  );
+  trainRightButton.addEventListener("click", () =>
+    addExample(getClassIndex("R"))
+  );
 
   while (true) {
     if (classifier.getNumClasses() > 0) {
@@ -59,7 +67,6 @@ async function bindTraining() {
   }
 }
 
-// load webcam
 async function loadWebcam() {
   webcamInfo.style.display = "block";
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
