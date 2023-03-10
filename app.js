@@ -1,5 +1,10 @@
 const classifier = knnClassifier.create();
+
 const webcamElement = document.getElementById("webcam");
+const trainLeftButton = document.getElementById("left");
+const trainMiddleButton = document.getElementById("middle");
+const trainRightButton = document.getElementById("right");
+
 let net;
 
 // load model
@@ -20,15 +25,9 @@ async function bindTraining() {
   }
 
   // add example
-  document
-    .getElementById("left")
-    .addEventListener("click", () => addExample(0));
-  document
-    .getElementById("middle")
-    .addEventListener("click", () => addExample(1));
-  document
-    .getElementById("right")
-    .addEventListener("click", () => addExample(2));
+  trainLeftButton.addEventListener("click", () => addExample(0));
+  trainMiddleButton.addEventListener("click", () => addExample(1));
+  trainRightButton.addEventListener("click", () => addExample(2));
 
   while (true) {
     if (classifier.getNumClasses() > 0) {
