@@ -6,7 +6,7 @@ const trainMiddleButton = document.getElementById("middle");
 const trainRightButton = document.getElementById("right");
 const predictionInfo = document.getElementById("predictionInfo");
 
-const classes = ["L", "M", "R"];
+const CLASSES = ["L", "M", "R"];
 
 let net;
 
@@ -40,16 +40,16 @@ async function bindTraining() {
       const result = await classifier.predictClass(activation);
 
       predictionInfo.innerText = `
-        prediction: ${classes[result.classIndex]}\n
+        prediction: ${CLASSES[result.classIndex]}\n
         probability: ${result.confidences[result.classIndex] * 100}%
       `;
 
       // game controller
-      if (classes[result.classIndex] == "L") {
+      if (CLASSES[result.classIndex] == "L") {
         $.state.keypress.left = true;
         $.state.keypress.right = false;
       }
-      if (classes[result.classIndex] == "R") {
+      if (CLASSES[result.classIndex] == "R") {
         $.state.keypress.left = false;
         $.state.keypress.right = true;
       }
