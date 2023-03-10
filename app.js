@@ -82,20 +82,12 @@ async function loadWebcam() {
   }
 }
 
-// init
-function init() {
-  loadModel()
-    .then((_) => {
-      loadWebcam();
-    })
-    .then((_) => {
-      bindTraining();
-    })
-    .then((_) => {
-      drawBg();
-      draw();
-    });
+async function init() {
+  await loadModel();
+  loadWebcam();
+  bindTraining();
+  drawBg();
+  draw();
 }
-window.onload = function () {
-  init();
-};
+
+window.onload = init();
