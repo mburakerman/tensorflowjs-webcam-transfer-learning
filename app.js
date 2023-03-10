@@ -6,6 +6,8 @@ const trainMiddleButton = document.getElementById("middle");
 const trainRightButton = document.getElementById("right");
 const predictionInfo = document.getElementById("predictionInfo");
 
+const classes = ["L", "M", "R"];
+
 let net;
 
 // load model
@@ -37,7 +39,6 @@ async function bindTraining() {
       // get the most likely class and confidences from the classifier module.
       const result = await classifier.predictClass(activation);
 
-      const classes = ["L", "M", "R"];
       predictionInfo.innerText = `
         prediction: ${classes[result.classIndex]}\n
         probability: ${result.confidences[result.classIndex] * 100}%
