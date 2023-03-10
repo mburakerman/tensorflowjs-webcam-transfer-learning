@@ -4,6 +4,7 @@ const webcamElement = document.getElementById("webcam");
 const trainLeftButton = document.getElementById("left");
 const trainMiddleButton = document.getElementById("middle");
 const trainRightButton = document.getElementById("right");
+const predictionInfo = document.getElementById("predictionInfo");
 
 let net;
 
@@ -37,7 +38,7 @@ async function bindTraining() {
       const result = await classifier.predictClass(activation);
 
       const classes = ["L", "M", "R"];
-      document.getElementById("console").innerText = `
+      predictionInfo.innerText = `
         prediction: ${classes[result.classIndex]}\n
         probability: ${result.confidences[result.classIndex] * 100}%
       `;
